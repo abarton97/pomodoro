@@ -27,7 +27,8 @@ function workTimer() {
         second = (workSeconds < 10) ? "0" + workSeconds : workSeconds;
         workTime.innerHTML = `${minute} : ${second}`;
         workColor.style.height = (workMinutes * 4) + (workSeconds / 15) + "%";
-      } else if (workSeconds == 0) {
+      }
+      if (workSeconds == 0 && workMinutes > 0) {
         workSeconds = 60;
       }
       if (workSeconds == 60 && workMinutes > 0) {
@@ -54,7 +55,8 @@ function breakTimer() {
         second = (breakSeconds < 10) ? "0" + breakSeconds : breakSeconds;
         breakTime.innerHTML = `${minute} : ${second}`;
         breakColor.style.height = (breakMinutes * 20) + (breakSeconds / 3) + "%";
-      } else if (breakSeconds == 0) {
+      }
+      if (breakSeconds == 0 && breakMinutes > 0) {
         breakSeconds = 60;
       }
       if (breakSeconds == 60 && breakMinutes > 0) {
