@@ -3,6 +3,8 @@ let workColor = document.querySelector('#worktime');
 let breakTime = document.querySelector('#breaktext');
 let breakColor = document.querySelector('#breaktime');
 
+let minute;
+let second;
 let paused;
 let workStarted;
 let breakStarted;
@@ -11,9 +13,6 @@ let workSeconds = 00;
 let workMinutes = 25;
 let breakMinutes = 5;
 let breakSeconds = 00;
-
-let minute;
-let second;
 
 function workTimer() {
   if (workStarted) {
