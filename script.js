@@ -25,7 +25,7 @@ function workTimer() {
         workSeconds--;
         minute = (workMinutes < 10) ? "0" + workMinutes : workMinutes;
         second = (workSeconds < 10) ? "0" + workSeconds : workSeconds;
-        workTime.innerHTML = `${minute} : ${second}`;
+        workTime.innerHTML = `${minute}:${second}`;
         workColor.style.height = (workMinutes * 4) + (workSeconds / 15) + "%";
       }
       if (workSeconds == 0 && workMinutes > 0) {
@@ -53,7 +53,7 @@ function breakTimer() {
         breakSeconds--;
         minute = (breakMinutes < 10) ? "0" + breakMinutes : breakMinutes;
         second = (breakSeconds < 10) ? "0" + breakSeconds : breakSeconds;
-        breakTime.innerHTML = `${minute} : ${second}`;
+        breakTime.innerHTML = `${minute}:${second}`;
         breakColor.style.height = (breakMinutes * 20) + (breakSeconds / 3) + "%";
       }
       if (breakSeconds == 0 && breakMinutes > 0) {
@@ -96,6 +96,20 @@ function getButtons(e) {
     breakStarted = false;
     stop();
   }
+  if (displayButton == 'Work Timer') {
+    breakSeconds = 0;
+    breakMinutes = 0;
+    workMinutes = 25;
+    workSeconds = 00;
+    breakColor.style.height = 0;
+    workColor.style.height = '100%';
+  }
+  if (displayButton == 'Break Timer') {
+    breakMinutes = 5, breakSeconds = 00;
+    workSeconds = 0, workMinutes = 0;
+    workColor.style.height = 0;
+    breakColor.style.height = '100%';
+  }
 }
 
 function workUpDown(e) {
@@ -104,13 +118,15 @@ function workUpDown(e) {
     workMinutes++;
     minute = (workMinutes < 10) ? "0" + workMinutes : workMinutes;
     second = (workSeconds < 10) ? "0" + workSeconds : workSeconds;
-    workTime.innerHTML = minute + " : " + second;
+    workTime.innerHTML = minute + ":" + second;
   }
   if (displayButton == '↓') {
-    workMinutes--;
-    minute = (workMinutes < 10) ? "0" + workMinutes : workMinutes;
-    second = (workSeconds < 10) ? "0" + workSeconds : workSeconds;
-    workTime.innerHTML = workMinutes + " : " + workSeconds;
+    if (workMinutes > 0) {
+      workMinutes--;
+      minute = (workMinutes < 10) ? "0" + workMinutes : workMinutes;
+      second = (workSeconds < 10) ? "0" + workSeconds : workSeconds;
+      workTime.innerHTML = minute + ":" + second;
+    }
   }
 }
 
@@ -120,13 +136,15 @@ function breakUpDown(e) {
     breakMinutes++;
     minute = (breakMinutes < 10) ? "0" + breakMinutes : breakMinutes;
     second = (breakSeconds < 10) ? "0" + breakSeconds : breakSeconds;
-    breakTime.innerHTML = minute + " : " + second;
+    breakTime.innerHTML = minute + ":" + second;
   }
   if (displayButton == '↓') {
-    breakMinutes--;
-    minute = (breakMinutes < 10) ? "0" + breakMinutes : breakMinutes;
-    second = (breakSeconds < 10) ? "0" + breakSeconds : breakSeconds;
-    breakTime.innerHTML = minute + " : " + second;
+    if (breakMinutes > 0) {
+      breakMinutes--;
+      minute = (breakMinutes < 10) ? "0" + breakMinutes : breakMinutes;
+      second = (breakSeconds < 10) ? "0" + breakSeconds : breakSeconds;
+      breakTime.innerHTML = minute + ":" + second;
+    }
   }
 }
 
