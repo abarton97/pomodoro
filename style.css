@@ -14,7 +14,7 @@ body {
     margin-left: 40%;
     display: flex;
     height: 100vh;
- 
+
 }
 
 #work, #break {
@@ -33,6 +33,7 @@ body {
     border: 10px solid white;
     display: flex;
     align-items: flex-end;
+    border-radius: 5px;
 }
 
 #worktime {
@@ -46,16 +47,17 @@ body {
     background-color:rgb(248, 51, 117);
     max-height: 100%;
     width: 100%;
-   
 }
 
 #worktext, #breaktext {
     color: white;
+    font-size: 30px;
     text-align: center;
-    padding: .25em 0;
+    padding: .20em 0;
+    font-family: monospace;
 }
 
-#start:hover, #stop:hover, #up:hover, #down:hover, #breakUp:hover, #breakDown:hover {
+.operator:hover, #start:hover, #stop:hover, #up:hover, #down:hover, #breakUp:hover, #breakDown:hover {
     background-color: #e5e5e5;
 }
 
