@@ -73,10 +73,6 @@ function breakTimer() {
   }
 }
 
-function stop() {
-  paused = true;
-}
-
 function getButtons(e) {
   displayButton = e.target.innerText;
   if (displayButton == 'START') {
@@ -92,7 +88,7 @@ function getButtons(e) {
   if (displayButton == 'STOP') {
     workStarted = false;
     breakStarted = false;
-    stop();
+    paused = true;
   }
   if (displayButton == 'Work Timer') {
     breakSeconds = 0;
