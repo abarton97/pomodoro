@@ -61,10 +61,10 @@ function breakTimer() {
         breakMinutes--;
       }
       if (breakMinutes == 0 && breakSeconds == 0) {
-        workMinutes = 24;
-        workSeconds = 60;
-        breakSeconds = 60;
-        breakMinutes = 4;
+        workMinutes = 25;
+        workSeconds = 0;
+        breakSeconds = 0;
+        breakMinutes = 5;
         beep();
         clearInterval(timer);
         workTimer();
